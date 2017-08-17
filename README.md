@@ -1,3 +1,8 @@
-# lark
+# Lark
+-------
+## contributors:
+* Bowen Zhi
+* Jiachen Sun
 
-Jiachen edited.
+## status
+Under constructing.
