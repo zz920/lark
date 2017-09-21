@@ -1,0 +1,51 @@
+{% extends "home_base.html" %}
+{% load static %}
+
+{% block title %}Lark Home{% endblock %}
+
+	{% block header %}
+			<!-- Static navbar -->
+			<div class="navbar navbar-inverse navbar-embossed navbar-static-top" role="navigation">
+			<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img src="{% static "img/larklogo.png" %}" class="img-rounded" alt="Logo image">
+				</a>
+
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+				</button>
+
+				<a class="navbar-brand" href="#">Lark Demo</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="{% url 'index' %}">Home</a></li>
+					<li><a href="{% url 'about' %}">About</a></li>
+					<li><a href="{% url 'contact' %}">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{% url 'signup' %}">Sign up</a></li>
+					<li><a> Or </a></li>
+					<li><a href="{% url 'signin' %}">Sign in</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+			</div>
+			</div>
+	{%endblock%}
+	{% block content%}
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-md-6">
+					<div>
+						<h1 class="text-warning">Lark Demo</h1>
+						<br>
+						<img class="img-rounded" src="{% static "img/lark.png" %}" alt="lark image">
+						<div class="text-warning">
+							Lark is under construction now. But it's designed to be a integrator of different cloud storages, such as Dropbox, Sina Cloud, even local storage and AWS S3. If you want to try this demo, you could contact me and get an account.   
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock %}

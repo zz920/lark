@@ -23,6 +23,5 @@ class LarkBackend(backends.ModelBackend):
         """
         Verify the time delay before email confirmation
         """
-
         now = timezone.now()
         return now - join_date < settings.REGISTER_DELAY

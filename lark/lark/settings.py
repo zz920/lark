@@ -26,7 +26,7 @@ SECRET_KEY = 'q$drcx$3m(y*0@dk#%t^toknwip-mm+-q8&8n1-9fb(@+bun13'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.211.132']
+ALLOWED_HOSTS = ['192.168.211.132', 'localhost']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+#    'filedesk',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'lark.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates"),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,5 +136,12 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 AUTH_USER_MODEL = "users.LarkUser"
+
 # Register delay before email confirm
+
 REGISTER_DELAY = timedelta(days=3)
+
+
+SECURE_SSL_REDIRECT = False
+CSRF_COOKIE_SECURE = False
+SESSON_COOKIE_SECURE = False

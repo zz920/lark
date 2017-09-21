@@ -1,0 +1,48 @@
+{% extends "home_base.html" %}
+{% load static %}
+
+{% block title %}Lark Home{% endblock %}
+	{% block header %}
+			<!-- Static navbar -->
+			<div class="navbar navbar-inverse navbar-embossed navbar-static-top" role="navigation">
+			<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img src="{% static "img/larklogo.png" %}" class="img-rounded" alt="Logo image">
+				</a>
+
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+				</button>
+
+				<a class="navbar-brand" href="#">Lark Demo</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="{% url 'index' %}">Home</a></li>
+					<li><a href="{% url 'about' %}">About</a></li>
+					<li class="active"><a href="{% url 'contact' %}">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{% url 'signup' %}">Sign up</a></li>
+					<li><a> Or </a></li>
+					<li><a href="{% url 'signin' %}">Sign in</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+			</div>
+			</div>
+	{%endblock%}
+	{% block content%}
+		<div class="container" >
+			<h1>
+				<p class="text-warning">
+				If you want to contact me:
+				</p> 
+			</h1>
+			
+			<ul class="text-warning">
+				<li>Email: zhi.b@husky.neu.edu </li>
+				<li><a href="https://www.linkedin.com/in/bowen-zhi-878756112/">LinkedIn: Bowen Zhi</a></li>
+			</ul>
+		</div>
+	{% endblock %}
