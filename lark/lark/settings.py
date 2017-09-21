@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'lark.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'larkdb',
+        'NAME': 'lark',
         'USER': 'zhibowen',
         'PASSWORD': 'zhibowen',
         'HOST': '127.0.0.1',
