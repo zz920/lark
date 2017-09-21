@@ -1,0 +1,67 @@
+{% extends "user_base.html" %}
+{% load static %}
+{% block styleloader %} 
+		<link rel="stylesheet" href="{% static "css/users/style.css" %}"> 
+{% endblock %}
+{% block title %}Lark Homing{% endblock %}
+	{% block header %}
+		    <!-- Static navbar -->
+		    <div class="navbar navbar-inverse navbar-embossed navbar-static-top" role="navigation">
+		    <div class="container">
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#">
+			  	<img src="{% static "img/larklogo.png" %}" class="img-rounded" alt="Logo image">
+			  </a>
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			    <span class="sr-only">Toggle navigation</span>
+			  </button>
+
+			  <a class="navbar-brand" href="#">Lark Demo</a>
+			</div>
+			<div class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav">
+			    <li><a href="{% url 'index' %}">Home</a></li>
+			    <li><a href="{% url 'about' %}">About</a></li>
+			    <li><a href="{% url 'contact' %}">Contact</a></li>
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right">
+			  	<li><a href="{% url 'signup' %}">Sign up</a></li>
+			  	<li><a> Or </a></li>
+			    	<li class="active"><a href="{% url 'signin' %}">Sign in</a></li>
+			  </ul>
+			</div><!--/.nav-collapse -->
+		    </div>
+		    </div>
+	{%endblock%}
+	{% block content%}
+		<div class="container">
+			<div class="row main">
+				<div class="main-login main-center">
+				<h5>Welcome Home!</h5>
+					<form class="form-signin" method="post" action="{% url 'signin'%}">
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group ">
+							<button target="_blank" type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Back Nest</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+    {% endblock %}
